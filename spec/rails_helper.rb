@@ -63,9 +63,5 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
 
-  # Configuring Database Cleaner - making sure that tests start with clean state.
-  config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
-  end
 
 end
