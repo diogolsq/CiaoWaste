@@ -65,3 +65,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # gem to generate Mock test, Test Doubles etc
 gem 'mocha'
+
+# gem to use assert_template
+gem 'rails-controller-testing'
