@@ -51,14 +51,14 @@ ActiveRecord::Schema.define(version: 2020_07_06_153949) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.bigint "users_id", null: false
-    t.bigint "meals_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "meal_id", null: false
     t.string "description"
     t.float "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["meals_id"], name: "index_reviews_on_meals_id"
-    t.index ["users_id"], name: "index_reviews_on_users_id"
+    t.index ["meal_id"], name: "index_reviews_on_meal_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -83,6 +83,6 @@ ActiveRecord::Schema.define(version: 2020_07_06_153949) do
   add_foreign_key "meals", "restaurants"
   add_foreign_key "orders", "users"
   add_foreign_key "restaurants", "users"
-  add_foreign_key "reviews", "meals", column: "meals_id"
-  add_foreign_key "reviews", "users", column: "users_id"
+  add_foreign_key "reviews", "meals"
+  add_foreign_key "reviews", "users"
 end
