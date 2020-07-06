@@ -13,7 +13,6 @@ describe Review do
   it "must be a score between 1 to 5" do
     review = Review.create(user_id:diogo.id, meal_id:salmao.id, rating: 2)
 
-    expect([1 , 2, 3, 4, 5]).to include(review.rating)
+    expect([1, 2, 3, 4, 5]).to include(review.rating)
   end
-
 end
